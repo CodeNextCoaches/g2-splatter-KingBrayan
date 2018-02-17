@@ -9,7 +9,7 @@ var slider;
     canvas=createCanvas(canvasWidth,canvasHeight);
     background(0);
     canvas.parent("canvas-area");
-    canvas.mousePressed(drawEllipse);
+    canvas.mousePressed(drawSplatter);
     button=select("#clear-button");
     button.mousePressed(setup);
     slider=select("#slider");
@@ -26,7 +26,15 @@ function updateSpread(){
       spread = slider.value();
 
 }
-
+function drawSplatter(){
+  var randEllipses=random(10,15);
+  fill(random(0,255),random(0,255),random(0,255));
+  noStroke();
+  for(i=0;i<randEllipses;i++){
+    var randRadius= random(5,15);
+    ellipse(random(mouseX-spread,mouseX+spread),random(mouseY-spread,mouseY+spread),randRadius,randRadius);
+  }
+}
 /*
  * updateSpread()
  * This function simply sets the spread variable to the value of the slider.
