@@ -9,5 +9,9 @@ html {
 body {
   text-align: center;
 }
-
+#canvas-area{
+	margin:1px auto;
+	width:500;
+	height:400px;
+}
 /* Create your styles below */
